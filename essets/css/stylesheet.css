@@ -1,0 +1,888 @@
+*{
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+    box-sizing: border-box;
+}
+body{
+    background-color: rgb(34, 34, 34) ;
+}
+.main-container{
+    min-height: 100vh;
+    width: 100%; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+.main{
+    width: 90%;
+    height: 90% ;
+    background-color: hsla(0, 1%, 53%, 0.219);
+    margin: auto;
+    border-radius: 20px;
+    overflow: hidden;
+    position: relative;
+}
+.main-container::after{
+    content: "";
+    height: 100%;
+    width: 100%;
+    background-color:rgb(255, 0, 0);
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    clip-path: circle(50% at right 70%);
+    z-index: -1;
+}
+span{
+    color: rgb(203, 48, 48);
+}
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 70px;
+}
+.logo a{
+    text-decoration: none;
+    color: beige;
+    font-size: 60px;
+    font-weight: 700;
+    font-style: oblique;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    
+}
+ul{
+    display: flex;
+    gap: 15px;
+}
+li{
+    display: inline-block;
+    list-style-type: none;
+}
+li a{
+    text-decoration: none;
+    color: beige;
+    font-size: 15px;
+    font-weight: 500;
+    letter-spacing: 2px;
+    text-transform: capitalize;
+    transition: 1s
+}
+li a:hover{
+    color: rgb(203, 48, 48)
+}
+.humburger{
+    display: none;
+}
+.content{
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    padding: 70px 0 ;
+    margin: auto;
+    align-items: center;
+}
+.content-text{
+    width: 60%;
+    height: 100%;
+    padding: 50px 0;
+}
+.content-text h2{
+    color: beige;
+    font-size: 50px;
+    font-weight: 550;
+    letter-spacing: 2px;
+    text-transform: capitalize;
+    margin-bottom: 0;
+}
+.content-text p{
+    color: beige;
+    font-size: 15px;
+    font-weight: 400;
+    letter-spacing: 2px;
+    text-transform: capitalize;
+    padding: 0 30px 0 1px;
+}
+.content-img{
+    height: 100%;
+    width: 50%;
+}
+.content-img img{
+    width:100% ;
+}
+/************************************ men section ******************************** */
+.men{
+    background-color: rgb(46, 46, 46);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 50px 20px;
+    position: relative;
+    z-index: 1;
+}
+.title-men h2{  
+    color: black;
+    font-size: 50px;
+    font-weight: 550;
+    letter-spacing: 2px;
+    text-transform: capitalize;
+}
+.men-container{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding-top: 40px;
+}
+.men-card{
+    width: 350px;
+    height: 450px;
+    background-color: rgba(34, 34, 34, 0.6) ;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px;
+    overflow: hidden;
+    position: relative;
+    transition: 0.5s;
+    z-index: 3;
+}
+.men-card:hover{
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.8);
+}
+.product-name{
+    position: absolute;
+    top: 30%;
+    opacity: 0;
+    transition-duration: 0.5s;
+    z-index: 2;
+}
+.men-card:hover .product-name{
+    top: 5%;
+    opacity: 1;
+}
+.product-name h4{
+    font-size: 30px;
+    color: aliceblue;
+    font-weight: 500;
+    letter-spacing: 1px;
+}
+.men-card .circle{
+    width: 100%;
+    height: 100%;
+    background-color: rgb(255, 0, 0);
+    clip-path: circle( 30% );
+    position: absolute;
+    transition: 0.5s;
+    z-index: 3;
+}
+.men-card:hover .circle{
+    transform: scale(0.80);
+}
+.men-card::before{
+    content: "nike";
+    font-size: 110px;
+    letter-spacing: 1px;
+    font-weight: 900;
+    font-style: italic;
+    color: rgb(65, 65, 65,);
+    text-transform: capitalize;
+    position: absolute;
+    top: -65px;
+    opacity: 0;
+    transition: 0.5s;
+    z-index: 1;
+}
+.men-card:hover::before{
+    opacity: 0.3;
+    top: 5%;
+}
+.men-card::after{
+    content: "shose";
+    font-size: 90px;
+    letter-spacing: 1px;
+    font-weight: 900;
+    font-style: italic;
+    color: rgb(65, 65, 65,);
+    text-transform: capitalize;
+    position: absolute;
+    bottom: -65px;
+    opacity: 0;
+    transition: 0.5s;
+    z-index: 1;
+}
+.men-card:hover::after{
+    opacity: 0.3;
+    bottom: 10%;
+}
+.men-card-img{
+    width: 80%;
+    position: absolute;
+    top: 30%;
+    transition: 0.8s;
+    z-index: 5;
+}
+.men-card:hover .men-card-img{
+    rotate: -20deg;
+    transform: scale(1.2);
+}
+.men-card-img img{
+    width: 100%;
+    filter: drop-shadow(2px 5px 10px rgba(0, 0, 0, 0.9));
+}
+.btn-men{
+    width: 65%;
+    display: flex;
+    align-items: center;
+    position: absolute;
+    bottom: 30%;
+    opacity: 0;
+    transition: 0.5s;
+    z-index: 2;
+}
+.men-card:hover .btn-men{
+    bottom: 5%;
+    opacity: 1;
+}
+.btn-men button{
+    animation-name: hamada;
+    animation-duration: 0.3s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    width: 100%;
+    height: 50px;
+    font-size: 22px;
+    font-weight: 300;
+    text-transform: capitalize;
+    color: aliceblue;
+    background-color: rgb(255, 0, 0);
+    border-radius: 20px;
+    border: solid transparent;
+    border-color: rgb(255, 0, 0);
+    transition: 0.2s;
+}
+.btn-men button:hover{
+    box-shadow: 0 0 5px  rgb(255, 0, 0)
+    ,0 0 25px  rgb(255, 0, 0)
+    ,0 0 50px rgb(255, 0, 0)
+    ,0 0 100px rgb(255, 0, 0)
+    ,0 0 200px rgb(255, 0, 0);
+}
+/*********************************** animation  *******************************/
+@keyframes hamada {
+    0%{
+        transform: translate(0px, -1px);
+    }
+    25%{
+        transform: translate(1px, 0px);
+    }
+    50%{
+        transform: translate(0px, 1px);
+    }
+    75%{
+        transform: translate(-1px, 0px);
+    }
+    100%{
+        transform: translate(0px, -1px);
+    }
+} 
+/******************************************* nth-child ***************************************/
+/** child(2) **/
+.men-card:nth-child(2)  .circle{
+    background-color: rgb(28, 121, 36);
+}
+.men-card:nth-child(2) .btn-men button{
+    background-color: rgb(28, 121, 36);
+    border-color: rgb(28, 121, 36); 
+}
+.men-card:nth-child(2) .btn-men button:hover{
+    box-shadow: 0 0 5px rgb(28, 121, 36)
+    ,0 0 25px rgb(28, 121, 36)
+    ,0 0 50px rgb(28, 121, 36)
+    ,0 0 100px rgb(28, 121, 36)
+    ,0 0 200px rgb(28, 121, 36);
+}
+/** child(3) **/
+.men-card:nth-child(3)  .circle{
+    background-color: rgb(49, 32, 106);
+}
+.men-card:nth-child(3) .btn-men button{
+    background-color: rgb(49, 32, 106);
+    border-color: rgb(49, 32, 106); 
+}
+.men-card:nth-child(3) .btn-men button:hover{
+    box-shadow: 0 0 5px rgb(49, 32, 106)
+    ,0 0 25px rgb(49, 32, 106)
+    ,0 0 50px rgb(49, 32, 106)
+    ,0 0 100px rgb(49, 32, 106)
+    ,0 0 200px rgb(49, 32, 106);
+}
+/** child(4) **/
+.men-card:nth-child(4)  .circle{
+    background-color: rgb(35, 27, 146);
+}
+.men-card:nth-child(4) .btn-men button{
+    background-color: rgb(35, 27, 146);
+    border-color: rgb(35, 27, 146); 
+}
+.men-card:nth-child(4) .btn-men button:hover{
+    box-shadow: 0 0 5px rgb(35, 27, 146)
+    ,0 0 25px rgb(35, 27, 146)
+    ,0 0 50px rgb(35, 27, 146)
+    ,0 0 100px rgb(35, 27, 146)
+    ,0 0 200px rgb(35, 27, 146);
+}
+/** child(5) **/
+.men-card:nth-child(5)  .circle{
+    background-color: rgb(81, 79, 65);
+}
+.men-card:nth-child(5) .btn-men button{
+    background-color: rgb(81, 79, 65);
+    border-color: rgb(81, 79, 65);
+}
+.men-card:nth-child(5) .btn-men button:hover{
+    box-shadow: 0 0 5px rgb(81, 79, 65)
+    ,0 0 25px rgb(81, 79, 65)
+    ,0 0 50px rgb(81, 79, 65)
+    ,0 0 100px rgb(81, 79, 65)
+    ,0 0 200px rgb(81, 79, 65);
+}
+/** child(6) **/
+.men-card:nth-child(6)  .circle{
+    background-color: rgb(31, 63, 204);
+}
+.men-card:nth-child(6) .btn-men button{
+    background-color: rgb(31, 63, 204);
+    border-color: rgb(31, 63, 204);
+}
+.men-card:nth-child(6) .btn-men button:hover{
+    box-shadow: 0 0 5px rgb(31, 63, 204)
+    ,0 0 25px rgb(31, 63, 204)
+    ,0 0 50px rgb(31, 63, 204)
+    ,0 0 100px rgb(31, 63, 204)
+    ,0 0 200px rgb(31, 63, 204);
+}
+/** child(7) **/
+.men-card:nth-child(7)  .circle{
+    background-color: rgb(117, 206, 27);
+}
+.men-card:nth-child(7) .btn-men button{
+    background-color: rgb(117, 206, 27);
+    border-color: rgb(117, 206, 27);
+}
+.men-card:nth-child(7) .btn-men button:hover{
+    box-shadow: 0 0 5px rgb(117, 206, 27)
+    ,0 0 25px rgb(117, 206, 27)
+    ,0 0 50px rgb(117, 206, 27)
+    ,0 0 100px rgb(117, 206, 27)
+    ,0 0 200px rgb(117, 206, 27);
+}
+/************************************ women section ******************************** */
+.women{
+    background-color: rgb(34, 34, 34);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 50px 20px;
+}
+.title-women h2{  
+    color: black;
+    font-size: 50px;
+    font-weight: 550;
+    letter-spacing: 2px;
+    text-transform: capitalize;
+}
+.women-container{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding-top: 40px;
+}
+.women-card{
+    width: 350px;
+    height: 450px;
+    background-color: hsla(0, 1%, 53%, 0.219);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px;
+    overflow: hidden;
+    position: relative;
+    transition: 0.5s;
+}
+.women-card:hover{
+    box-shadow: 0 0 40px rgba(240, 248, 255, 0.4);
+}
+.product-name{
+    position: absolute;
+    top: 30%;
+    opacity: 0;
+    transition-duration: 0.5s;
+    z-index: 2;
+}
+.women-card:hover .product-name{
+    top: 5%;
+    opacity: 1;
+}
+.product-name h4{
+    font-size: 30px;
+    color: aliceblue;
+    font-weight: 500;
+    letter-spacing: 1px;
+}
+.women-card .circle{
+    width: 100%;
+    height: 100%;
+    background-color: rgb(179, 7, 214);
+    clip-path: circle( 30% );
+    position: absolute;
+    transition: 0.5s;
+    z-index: 3;
+}
+.women-card:hover .circle{
+    transform: scale(0.80);
+}
+.women-card::before{
+    content: "nike";
+    font-size: 110px;
+    letter-spacing: 1px;
+    font-weight: 900;
+    font-style: italic;
+    color: rgb(65, 65, 65,);
+    text-transform: capitalize;
+    position: absolute;
+    top: -65px;
+    opacity: 0;
+    transition: 0.5s;
+    z-index: 1;
+}
+.women-card:hover::before{
+    opacity: 0.3;
+    top: 5%;
+}
+.women-card::after{
+    content: "shose";
+    font-size: 90px;
+    letter-spacing: 1px;
+    font-weight: 900;
+    font-style: italic;
+    color: rgb(65, 65, 65,);
+    text-transform: capitalize;
+    position: absolute;
+    bottom: -65px;
+    opacity: 0;
+    transition: 0.5s;
+    z-index: 1;
+}
+.women-card:hover::after{
+    opacity: 0.3;
+    bottom: 10%;
+}
+.women-card-img{
+    width: 80%;
+    position: absolute;
+    top: 30%;
+    transition: 0.8s;
+    z-index: 5;
+}
+.women-card:hover .women-card-img{
+    rotate: -20deg;
+    transform: scale(1.2);
+}
+.women-card-img img{
+    width: 100%;
+    filter: drop-shadow(2px 5px 10px rgba(0, 0, 0, 0.9));
+}
+.btn-women{
+    width: 65%;
+    display: flex;
+    align-items: center;
+    position: absolute;
+    bottom: 30%;
+    opacity: 0;
+    transition: 0.5s;
+    z-index: 2;
+}
+.women-card:hover .btn-women{
+    bottom: 5%;
+    opacity: 1;
+}
+.btn-women button{
+    animation-name: hamada;
+    animation-duration: 0.3s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    width: 100%;
+    height: 40px;
+    font-size: 18px;
+    font-weight: 300;
+    text-transform: capitalize;
+    color: aliceblue;
+    background-color: rgb(179, 7, 214);
+    border-radius: 20px;
+    border: solid transparent;
+    border-color: rgb(179, 7, 214);
+    transition: 0.2s;
+}
+.btn-women button:hover{
+    box-shadow: 0 0 5px  rgb(179, 7, 214)
+    ,0 0 25px  rgb(179, 7, 214)
+    ,0 0 50px rgb(179, 7, 214)
+    ,0 0 100px rgb(179, 7, 214)
+    ,0 0 200px rgb(179, 7, 214);
+}
+/*********************************** animation  *******************************/
+@keyframes hamada {
+    0%{
+        transform: translate(0px, -1px);
+    }
+    25%{
+        transform: translate(1px, 0px);
+    }
+    50%{
+        transform: translate(0px, 1px);
+    }
+    75%{
+        transform: translate(-1px, 0px);
+    }
+    100%{
+        transform: translate(0px, -1px);
+    }
+} 
+/******************************************* nth-child ***************************************/
+/** child(2) **/
+.women-card:nth-child(2)  .circle{
+    background-color: rgb(28, 89, 121);
+}
+.women-card:nth-child(2) .btn-women button{
+    background-color: rgb(28, 89, 121);
+    border-color: rgb(28, 89, 121); 
+}
+.women-card:nth-child(2) .btn-women button:hover{
+    box-shadow: 0 0 5px rgb(28, 89, 121)
+    ,0 0 25px rgb(28, 89, 121)
+    ,0 0 50px rgb(28, 89, 121)
+    ,0 0 100px rgb(28, 89, 121)
+    ,0 0 200px rgb(28, 89, 121);
+}
+/** child(3) **/
+.women-card:nth-child(3)  .circle{
+    background-color: rgb(47, 47, 47);
+}
+.women-card:nth-child(3) .btn-women button{
+    background-color: rgb(47, 47, 47);
+    border-color: rgb(47, 47, 47); 
+}
+.women-card:nth-child(3) .btn-women button:hover{
+    box-shadow: 0 0 5px rgb(47, 47, 47)
+    ,0 0 25px rgb(47, 47, 47)
+    ,0 0 50px rgb(47, 47, 47)
+    ,0 0 100px rgb(47, 47, 47)
+    ,0 0 200px rgb(47, 47, 47);
+}
+/** child(4) **/
+.women-card:nth-child(4)  .circle{
+    background-color: rgb(147, 83, 193);
+}
+.women-card:nth-child(4) .btn-women button{
+    background-color: rgb(147, 83, 193);
+    border-color: rgb(147, 83, 193); 
+}
+.women-card:nth-child(4) .btn-women button:hover{
+    box-shadow: 0 0 5px rgb(147, 83, 193)
+    ,0 0 25px rgb(147, 83, 193)
+    ,0 0 50px rgb(147, 83, 193)
+    ,0 0 100px rgb(147, 83, 193)
+    ,0 0 200px rgb(147, 83, 193);
+}
+/** child(5) **/
+.women-card:nth-child(5)  .circle{
+    background-color: rgb(228, 138, 177);
+}
+.women-card:nth-child(5) .btn-women button{
+    background-color: rgb(228, 138, 177);
+    border-color: rgb(228, 138, 177);
+}
+.women-card:nth-child(5) .btn-women button:hover{
+    box-shadow: 0 0 5px rgb(228, 138, 177)
+    ,0 0 25px rgb(228, 138, 177)
+    ,0 0 50px rgb(228, 138, 177)
+    ,0 0 100px rgb(228, 138, 177)
+    ,0 0 200px rgb(228, 138, 177);
+}
+/** child(7) **/
+.women-card:nth-child(6)  .circle{
+    background-color: rgb(102, 174, 206);
+}
+.women-card:nth-child(6) .btn-women button{
+    background-color: rgb(102, 174, 206);
+    border-color: rgb(102, 174, 206);
+}
+.women-card:nth-child(6) .btn-women button:hover{
+    box-shadow: 0 0 5px rgb(102, 174, 206)
+    ,0 0 25px rgb(102, 174, 206)
+    ,0 0 50px rgb(102, 174, 206)
+    ,0 0 100px rgb(102, 174, 206)
+    ,0 0 200px rgb(102, 174, 206);
+}
+/** child(7) **/
+.women-card:nth-child(7)  .circle{
+    background-color: rgb(10, 89, 40);
+}
+.women-card:nth-child(7) .btn-women button{
+    background-color: rgb(10, 89, 40);
+    border-color: rgb(10, 89, 40);
+}
+.women-card:nth-child(7) .btn-women button:hover{
+    box-shadow: 0 0 5px rgb(10, 89, 40)
+    ,0 0 25px rgb(10, 89, 40)
+    ,0 0 50px rgb(10, 89, 40)
+    ,0 0 100px rgb(10, 89, 40)
+    ,0 0 200px rgb(10, 89, 40);
+}
+/************ scroll bar **********/
+::-webkit-scrollbar{
+    display: none;
+}
+/*************** responsev ************************/
+/* 1200px */
+@media screen and (max-width:1300px) {
+    .men-card
+    ,.women-card{
+        width: 20%;
+        height: 350px;
+    }
+    .btn-men
+    ,.btn-women{
+        width: 60%;
+    }
+    .btn-men button
+    ,.btn-women button{
+        height: 30px;
+        font-size: 18px;
+    }
+    .product-name h4 {
+        font-size: 24px;
+    }
+    .men-card-img
+    ,.women-card-img{
+        top: 35%;
+    }
+    .men-card::before
+    ,.women-card::before{
+        font-size: 65px;
+    }
+    .men-card:hover::before
+    ,.women-card:hover::before{
+        top: 15%;
+    }
+    .men-card::after
+    ,.women-card::after{
+        font-size: 55px;
+    }
+    .men-card:hover::after
+    ,.women-card:hover::after{
+        bottom: 15%;
+    }
+    .men-card .circle{
+        clip-path: circle(25%);
+    }
+}
+/* 900px */
+@media screen and (max-width:900px) {
+    .product-name h4 {
+        font-size: 20px;
+    }
+    .men-card-img
+    ,.women-card-img{
+        top: 40%;
+    }
+}
+/* 800px */
+@media screen and (max-width:800px) {
+    .men-card
+    ,.women-card{
+        width: 27%;
+    }
+    .btn-men
+    ,.btn-women{
+        width: 65%;
+    }
+    .product-name h4 {
+        font-size: 18px;
+    }
+    .men-card-img
+    ,.women-card-img{
+        top: 40%;
+    }
+}
+/* 700px */
+@media screen and (max-width:700px) {
+    header{
+        padding: 5px 30px;
+    }
+}
+/* 660px */
+@media screen and (max-width:660px) {
+    .content{
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin: auto;
+        align-items: center;
+    }
+    .content-text{
+        width: 80%;
+        text-align: center;
+        padding: 30px 0 15px;
+    }
+    .content-text p{
+        padding: 0;
+    }
+    .content-img{
+        width: 80%;
+        display: flex;
+    }
+    .content-img img{
+        width: 100%;
+        
+    }
+    .main::after{
+        clip-path: circle(50% at bottom);
+    }
+}
+/* 550px */
+@media screen and (max-width:550px) {
+    .humburger{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        cursor: pointer;
+        gap: 5px;
+    }
+    .humburger.activeH{
+        gap: 0px;
+    }
+    .line{
+        width: 30px;
+        height: 2px;
+        background-color: aliceblue;
+        transition: 0.3s;
+    }
+    .line.active1{
+        position: absolute;
+        right: 0px;
+        rotate: 50deg;
+        transition: 0.3s;
+    }
+    .line.active3{
+        position: absolute;
+        right: 0px;
+        rotate: -50deg;
+        transition: 0.3s;
+    }
+    .line.active2{
+        position: absolute;
+        right: 0px;
+        rotate: -50deg;
+        opacity: 0;
+        transition: 0.3s;
+    }
+    nav{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 150px;
+        height: 0;
+        position: absolute;
+        right: 5px;
+        top: 55px;
+        overflow: hidden;
+        transition: 0.3s;
+    }
+    nav.active{
+        height: 150px;
+        width: 150px;
+        background-color: hsla(0, 1%, 53%, 0.1);
+        border-radius: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        right: 5px;
+        top: 55px;
+    }
+    nav ul{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        opacity: 0;
+        transition: 0.3s;
+    }
+    nav.active ul{       
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        opacity: 1;
+    }
+    .men-card
+    ,.women-card{
+        width: 42%;
+    }
+    .btn-men
+    ,.btn-women{
+        width: 70%;
+    }
+    .product-name h4{
+        font-size: 18px;
+    }
+    .men-card-img
+    .women-card-img{
+        top: 40%;
+    }
+}
+/* 375px */
+@media screen and (max-width:375px) {
+    .men-card
+    ,.women-card{
+        width: 80%;
+    }
+    .btn-men
+    ,.btn-women{
+        width: 60%;
+    }
+    .product-name h4 {
+        font-size: 22px;
+    }
+    .men-card-img
+    ,.women-card-img{
+        top: 35%;
+    }
+}
